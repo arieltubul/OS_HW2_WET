@@ -1,0 +1,92 @@
+0: New account id is 1  with password  1111 and initial balance 10000
+0: New account id is 2  with password  2222 and initial balance 10000
+0: New account id is 3  with password  3333 and initial balance 10000
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 1
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 2
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 3
+0: New account id is 4  with password  4444 and initial balance 10000
+0: New account id is 5  with password  5555 and initial balance 10000
+0: New account id is 6  with password  6666 and initial balance 10000
+Bank: commissions of 3 % were charged, the bank gained 291 $ from account 1
+Bank: commissions of 3 % were charged, the bank gained 291 $ from account 2
+Bank: commissions of 3 % were charged, the bank gained 291 $ from account 3
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 4
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 5
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 6
+0: New account id is 7  with password  7777 and initial balance 10000
+0: New account id is 8  with password  8888 and initial balance 10000
+0: New account id is 9  with password  9999 and initial balance 10000
+Bank: commissions of 2 % were charged, the bank gained 188 $ from account 1
+Bank: commissions of 2 % were charged, the bank gained 188 $ from account 2
+Bank: commissions of 2 % were charged, the bank gained 188 $ from account 3
+Bank: commissions of 2 % were charged, the bank gained 194 $ from account 4
+Bank: commissions of 2 % were charged, the bank gained 194 $ from account 5
+Bank: commissions of 2 % were charged, the bank gained 194 $ from account 6
+Bank: commissions of 2 % were charged, the bank gained 200 $ from account 7
+Bank: commissions of 2 % were charged, the bank gained 200 $ from account 8
+Bank: commissions of 2 % were charged, the bank gained 200 $ from account 9
+0: New account id is 0  with password  1234 and initial balance 10000
+Error 0: Your transaction failed - account with the same id exists 
+Error 0: Your transaction failed - account with the same id exists 
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 0
+Bank: commissions of 3 % were charged, the bank gained 277 $ from account 1
+Bank: commissions of 3 % were charged, the bank gained 277 $ from account 2
+Bank: commissions of 3 % were charged, the bank gained 277 $ from account 3
+Bank: commissions of 3 % were charged, the bank gained 285 $ from account 4
+Bank: commissions of 3 % were charged, the bank gained 285 $ from account 5
+Bank: commissions of 3 % were charged, the bank gained 285 $ from account 6
+Bank: commissions of 3 % were charged, the bank gained 294 $ from account 7
+Bank: commissions of 3 % were charged, the bank gained 294 $ from account 8
+Bank: commissions of 3 % were charged, the bank gained 294 $ from account 9
+Error 0: Your transaction failed - account with the same id exists 
+Error 0: Your transaction failed - account with the same id exists 
+0: New account id is -12  with password  1111 and initial balance 10000
+Bank: commissions of 4 % were charged, the bank gained 400 $ from account -12
+Bank: commissions of 4 % were charged, the bank gained 388 $ from account 0
+Bank: commissions of 4 % were charged, the bank gained 358 $ from account 1
+Bank: commissions of 4 % were charged, the bank gained 358 $ from account 2
+Bank: commissions of 4 % were charged, the bank gained 358 $ from account 3
+Bank: commissions of 4 % were charged, the bank gained 369 $ from account 4
+Bank: commissions of 4 % were charged, the bank gained 369 $ from account 5
+Bank: commissions of 4 % were charged, the bank gained 369 $ from account 6
+Bank: commissions of 4 % were charged, the bank gained 380 $ from account 7
+Bank: commissions of 4 % were charged, the bank gained 380 $ from account 8
+Bank: commissions of 4 % were charged, the bank gained 380 $ from account 9
+0: New account id is 13  with password  1111 and initial balance 0
+0: New account id is 14  with password  1111 and initial balance -10000
+0: New account id is 15  with password  1111 and initial balance -1
+Bank: commissions of 3 % were charged, the bank gained 288 $ from account -12
+Bank: commissions of 3 % were charged, the bank gained 279 $ from account 0
+Bank: commissions of 3 % were charged, the bank gained 258 $ from account 1
+Bank: commissions of 3 % were charged, the bank gained 258 $ from account 2
+Bank: commissions of 3 % were charged, the bank gained 258 $ from account 3
+Bank: commissions of 3 % were charged, the bank gained 266 $ from account 4
+Bank: commissions of 3 % were charged, the bank gained 266 $ from account 5
+Bank: commissions of 3 % were charged, the bank gained 266 $ from account 6
+Bank: commissions of 3 % were charged, the bank gained 274 $ from account 7
+Bank: commissions of 3 % were charged, the bank gained 274 $ from account 8
+Bank: commissions of 3 % were charged, the bank gained 274 $ from account 9
+Bank: commissions of 3 % were charged, the bank gained 0 $ from account 13
+Bank: commissions of 3 % were charged, the bank gained -300 $ from account 14
+Bank: commissions of 3 % were charged, the bank gained -0 $ from account 15
+0: New account id is 16  with password  -1285418553 and initial balance 10000
+0: New account id is 17  with password  1111 and initial balance 0
+0: New account id is 18  with password  0 and initial balance 10000
+Bank: commissions of 3 % were charged, the bank gained 279 $ from account -12
+Bank: commissions of 3 % were charged, the bank gained 271 $ from account 0
+Bank: commissions of 3 % were charged, the bank gained 250 $ from account 1
+Bank: commissions of 3 % were charged, the bank gained 250 $ from account 2
+Bank: commissions of 3 % were charged, the bank gained 250 $ from account 3
+Bank: commissions of 3 % were charged, the bank gained 258 $ from account 4
+Bank: commissions of 3 % were charged, the bank gained 258 $ from account 5
+Bank: commissions of 3 % were charged, the bank gained 258 $ from account 6
+Bank: commissions of 3 % were charged, the bank gained 266 $ from account 7
+Bank: commissions of 3 % were charged, the bank gained 266 $ from account 8
+Bank: commissions of 3 % were charged, the bank gained 266 $ from account 9
+Bank: commissions of 3 % were charged, the bank gained 0 $ from account 13
+Bank: commissions of 3 % were charged, the bank gained -291 $ from account 14
+Bank: commissions of 3 % were charged, the bank gained -0 $ from account 15
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 16
+Bank: commissions of 3 % were charged, the bank gained 0 $ from account 17
+Bank: commissions of 3 % were charged, the bank gained 300 $ from account 18
+0: New account id is 19  with password  0 and initial balance 10000
