@@ -50,7 +50,7 @@ public:
 void* BankStatePrinting(void* isWorking);
 void* chargeCommission(void* isWorking);
 
-static void printLeftTopCorner();
+void printLeftTopCorner();
 
 //already declared in main
 extern Bank* bank;

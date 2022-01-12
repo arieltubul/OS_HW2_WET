@@ -160,7 +160,7 @@ void* chargeCommission(void* Working)
 }
 
 //clearing screen and starts to print from top left corner
-static void printLeftTopCorner()
+void printLeftTopCorner()
 {
     printf("\033[2J");
     printf("\033[1;1H");

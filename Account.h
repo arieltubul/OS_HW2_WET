@@ -22,9 +22,9 @@ private:
     pthread_mutex_t accWriteLock;
 
 public:
-
-	//default C'tor
-    Account();
+//
+//	//default C'tor
+//    Account();
 
 	//parametrize C'tor
     Account(int account, int password, int initial_amount);

@@ -25,11 +25,11 @@ void ATM::setAtmInput(const char* input)
 void* atmFunc (void* atmInputFile)
 {
     ATM* curr_ATM = (ATM*)atmInputFile;
-    ifstream input_file(curr_ATM->getAtmInput().c_str());
+    ifstream input_file(curr_ATM->getAtmInput().c_str()); // creates a file object and open the file
     // check if the file is already open
 	if (input_file.is_open() == false)
 	{
-		cerr << "input file cannot be opened" << endl;
+		cerr << "input file couldn't open" << endl;
 		exit(ERROR);
 	}
     
@@ -38,7 +38,7 @@ void* atmFunc (void* atmInputFile)
 	string line ;
 
     while (getline(input_file, line)) {
-        if (!line.length())
+        if (!line.length()) //empty line
             continue;
 
         parseInput(&op, args, line);
@@ -69,6 +69,7 @@ void* atmFunc (void* atmInputFile)
             exit(ERROR);
         }
     }
+//    input_file.close();
     pthread_exit(NULL); //terminates the thread after finishing its file lines
 }
 
@@ -105,7 +106,7 @@ void ATM::closeAcc(int account, int password)
     {
         bankLog->lockLog();
         bankLog->logFile << "Error " << atmNum << ": Your transaction failed - account id "<< account
-        <<" does not exists" << endl;
+        <<" does not exist" << endl;
         bankLog->unlockLogFile();
     }
         //account exist
@@ -147,7 +148,7 @@ void ATM::deposit(int account, int password, int amount)
     {
         bankLog->lockLog();
 		bankLog->logFile << "Error " << atmNum << ": Your transaction failed - account id "<< account
-        <<" does not exists" << endl;
+        <<" does not exist" << endl;
 		bankLog->unlockLogFile();
     }
 
@@ -183,7 +184,7 @@ void ATM::withdraw(int account, int password, int amount)
     if(!accExist(account))
     {
         bankLog->lockLog();
-		bankLog->logFile << "Error " << atmNum << ": Your transaction failed - account id "<< account <<" does not exists" << endl;
+		bankLog->logFile << "Error " << atmNum << ": Your transaction failed - account id "<< account <<" does not exist" << endl;
 		bankLog->unlockLogFile();
     }
 
@@ -230,7 +231,7 @@ void ATM::getAccBalance(int acc, int password)
     if(!accExist(acc))
     {
         bankLog->lockLog();
-		bankLog->logFile << "Error " << atmNum << ": Your transaction failed - account id "<< acc <<" does not exists" << endl;
+		bankLog->logFile << "Error " << atmNum << ": Your transaction failed - account id "<< acc <<" does not exist" << endl;
 		bankLog->unlockLogFile();
     }
     else
@@ -260,88 +261,132 @@ void ATM::transaction(int source_acc, int password, int dest_acc, int amount)
     bank->bankLockReader();
     sleep(ACTION_SLEEP);
     // FIXME according to notes in tablet
-    if(!accExist(source_acc) || !accExist(dest_acc))
+    if(!accExist(source_acc)) //source account does not exist
     {
         bankLog->lockLog();
-		bankLog->logFile << "error " << atmNum << ": your transaction failed - account id "<< source_acc <<" does not exists" << endl;
+		bankLog->logFile << "Error " << atmNum << ": your transaction failed - account id "<< source_acc <<" does not exist" << endl;
 		bankLog->unlockLogFile();
     }
 
-    else
+    else //source account does exist!
     {
-        if(checkPassword(source_acc, password))
-        {
-            Account &from = bank->getAcc(source_acc);
-            Account &to = bank->getAcc(dest_acc);
-
-            //we will lock by order to prevent deadlock, meaning that if 2 accounts transfer simultaneously to each other
-            //so we will lock their write_locks by order so that we won't get deadlock
-            if(source_acc < dest_acc)
-            {
-                from.accLockWriters();
-                to.accLockWriters();
-            }
-
-            else
-            {
-                to.accLockWriters();
-                from.accLockWriters();
-            }
-
-            if (from.getBalance() >= amount)
-            {
-                from.setAccBalance(-amount);
-                to.setAccBalance(amount);
-                bankLog->lockLog();
-		        bankLog->logFile << atmNum << ": transfer " << amount << " from account "<< source_acc << " to account "
-                << dest_acc << " new account balance is "<< from.getBalance() << " new target account balance is "
-                << to.getBalance()<< endl;
-		        bankLog->unlockLogFile();
-            }
-            else
-            {
-                bankLog->lockLog();
-		        bankLog->logFile << "error " << atmNum << ": your transaction failed - account id "
-                << source_acc <<" balance is lower than " << amount << endl;
-		        bankLog->unlockLogFile();
-            }
-
-            // for unlock the order doesn't matter
-            from.accUnlockWriters();
-            to.accUnlockWriters();
-        }
-
-        else //wrong password
+        if(!accExist(dest_acc)) //dest account does not exist
         {
             bankLog->lockLog();
-		    bankLog->logFile << "error " << atmNum << ": your transaction failed - password for account id "
-            << source_acc <<" is incorrect" << endl;
-		    bankLog->unlockLogFile();
+            bankLog->logFile << "Error " << atmNum << ": your transaction failed - account id "<< dest_acc <<" does not exist" << endl;
+            bankLog->unlockLogFile();
         }
-    }
+        else //both accounts exist
+        {
+            if(checkPassword(source_acc, password))
+            {
+                Account &from = bank->getAcc(source_acc);
+                Account &to = bank->getAcc(dest_acc);
+
+                //we will lock by order to prevent deadlock, meaning that if 2 accounts transfer simultaneously to each other
+                //so we will lock their write_locks by order so that we won't get deadlock
+                if(source_acc < dest_acc)
+                {
+                    from.accLockWriters();
+                    to.accLockWriters();
+                }
+
+                else
+                {
+                    to.accLockWriters();
+                    from.accLockWriters();
+                }
+
+                if (from.getBalance() >= amount)
+                {
+                    from.setAccBalance(-amount);
+                    to.setAccBalance(amount);
+                    bankLog->lockLog();
+                    bankLog->logFile << atmNum << ": transfer " << amount << " from account "<< source_acc << " to account "
+                                     << dest_acc << " new account balance is "<< from.getBalance() << " new target account balance is "
+                                     << to.getBalance()<< endl;
+                    bankLog->unlockLogFile();
+                }
+                else //not enough money for transaction
+                {
+                    bankLog->lockLog();
+                    bankLog->logFile << "Error " << atmNum << ": your transaction failed - account id "
+                                     << source_acc <<" balance is lower than " << amount << endl;
+                    bankLog->unlockLogFile();
+                }
+
+                // for unlock the order doesn't matter
+                from.accUnlockWriters();
+                to.accUnlockWriters();
+            }
+            else //wrong password
+            {
+                bankLog->lockLog();
+                bankLog->logFile << "Error " << atmNum << ": your transaction failed - password for account id "
+                                 << source_acc <<" is incorrect" << endl;
+                bankLog->unlockLogFile();
+            }
+        }//both accounts exist
+    }//source account does exist!
     bank->bankUnlockReader();
 }
-//TODO : LOOK IN WAHTSAPP
+
+//void parseInput(char* Operation, int args[MAX_ARG], string line)
+//{
+//    for(int j=0; j<MAX_ARG; j++)
+//        args[j]=0;
+//
+//    char* cmd = new char[strlen(line.c_str()) + 1];
+//    strcpy(cmd,line.c_str());
+//    std::string s = " \t\n";
+//    const char* delimiters = s.c_str();
+//    *Operation = *strtok(cmd, delimiters);
+//
+//	for(int i=0; i<MAX_ARG; i++)
+//    {
+//        char* tmp = strtok(NULL, delimiters);
+//        args[i] = atoi(tmp);
+//    }
+//    delete[] cmd;
+//}
+
 void parseInput(char* Operation, int args[MAX_ARG], string line)
 {
-    char* cmd = NULL, *token = NULL;
-//	const char* delimiters = (char*)" ";
-	int i = 0;
+//    char* cmd = NULL, *token = NULL;
+//    const char* delimiters = (char*)" ";
+//    int i = 0;
+//
+//    cmd = new char[strlen(line.c_str()) + 1];
+//    strcpy(cmd,line.c_str());
+//
+//    *Operation = *strtok(cmd, " ");
+//
+//    token = strtok(NULL, " ");
+//    while (token) {
+//        args[i] = atoi(token);
+//        token = strtok(NULL, " ");
+//        i++;
+//    }
+//    delete[] cmd;
+    char* cmd = NULL;
+    char* token = NULL;
+    std::string s = " \t\n";
+    const char* delimiters = s.c_str();
 
     cmd = new char[strlen(line.c_str()) + 1];
     strcpy(cmd,line.c_str());
-    
-    *Operation = *strtok(cmd, " ");
 
-	token = strtok(NULL, " ");
-    while (token) {
+    *Operation = *strtok(cmd, delimiters);
+    token = strtok(NULL, delimiters);
+    int i = 0;
+    while(token)
+    {
         args[i] = atoi(token);
-        token = strtok(NULL, " ");
+        token = strtok(NULL, delimiters);
         i++;
     }
     delete[] cmd;
 }
-
 bool accExist(int account)
 {
     map<int, Account*>::iterator it = bank->getBegin();

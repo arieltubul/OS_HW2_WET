@@ -1,21 +1,21 @@
 #include "Account.h"
 
 //TODO is C'tor with no paramteres is necessary?
-Account::Account():accNum(0),password(0),balance(0),readCounter(0)
-{
-    //write mutex
-    if (pthread_mutex_init(&accWriteLock, NULL) != 0)
-    {
-        perror("mutex init fails in account");
-        exit(FAILURE);
-    }
-    //read mutex
-    if (pthread_mutex_init(&accReadLock, NULL) != 0)
-    {
-        perror("mutex init fails in account");
-        exit(FAILURE);
-    }
-}
+//Account::Account():accNum(0),password(0),balance(0),readCounter(0)
+//{
+//    //write mutex
+//    if (pthread_mutex_init(&accWriteLock, NULL) != 0)
+//    {
+//        perror("mutex init fails in account");
+//        exit(FAILURE);
+//    }
+//    //read mutex
+//    if (pthread_mutex_init(&accReadLock, NULL) != 0)
+//    {
+//        perror("mutex init fails in account");
+//        exit(FAILURE);
+//    }
+//}
 
 Account::Account(int account, int password, int initial_amount):accNum(account),password(password),balance(initial_amount),readCounter(0)
 {

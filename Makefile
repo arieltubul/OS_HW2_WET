@@ -8,7 +8,7 @@ TARGET=Bank
 $(TARGET): $(OBJS)
 	$(CCLINK) $(CFLAGS) -o $(TARGET) $(OBJS)
 
-Bank-Account.o: Account.cpp Account.h
+Account.o: Account.cpp Account.h
 Bank.o: Bank.cpp Bank.h Account.h Log.h
 ATM.o: ATM.cpp ATM.h Bank.h
 main.o: main.cpp Account.h Bank.h Log.h
