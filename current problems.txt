@@ -1,3 +1,10 @@
 1.parsing
-2.compilation of submission
+2.compilation of submission:
+
+/tmp/tmpw748jsmh/Bank.h:53:13: error: ‘void printLeftTopCorner()’ declared ‘static’ but never defined [-Werror=unused-function]
+ static void printLeftTopCorner();
+
+/tmp/tmpw748jsmh/Bank.h:53:13: error: ‘void printLeftTopCorner()’ declared ‘static’ but never defined [-Werror=unused-function]
+ static void printLeftTopCorner();
+             
 3.comparing to whatsapp output
