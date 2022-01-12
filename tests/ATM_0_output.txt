@@ -1,0 +1,27 @@
+0: New account id is 1 with password 0001 and initial balance 1000
+0: New account id is 2 with password 0022 and initial balance 10
+0: New account id is 3 with password 0333 and initial balance 1000
+Bank: commissions of 3% were charged, the bank gained 30$ from account 1
+Bank: commissions of 3% were charged, the bank gained 0$ from account 2
+Bank: commissions of 3% were charged, the bank gained 30$ from account 3
+0: New account id is 4 with password 4444 and initial balance 10000000
+0: Account 2 new balance is 20 after 10 $ was deposited
+0: Account 2 new balance is 10 after 10 $ was withdrew
+Bank: commissions of 3% were charged, the bank gained 29$ from account 1
+Bank: commissions of 3% were charged, the bank gained 0$ from account 2
+Bank: commissions of 3% were charged, the bank gained 29$ from account 3
+Bank: commissions of 3% were charged, the bank gained 300000$ from account 4
+0: Account 2 new balance is 0 after 10 $ was withdrew
+0: Account 2 balance is 0
+0: Account 1 balance is 941
+Bank: commissions of 2% were charged, the bank gained 18$ from account 1
+Bank: commissions of 2% were charged, the bank gained 0$ from account 2
+Bank: commissions of 2% were charged, the bank gained 18$ from account 3
+Bank: commissions of 2% were charged, the bank gained 194000$ from account 4
+0: Transfer 1000 from account 4 to account 2 new account balance is 9505000 new target account balance is 1000
+0: Account 2 is now closed. Balance was 1000
+0: Account 4 is now closed. Balance was 9505000
+Bank: commissions of 3% were charged, the bank gained 27$ from account 1
+Bank: commissions of 3% were charged, the bank gained 27$ from account 3
+Bank: commissions of 4% were charged, the bank gained 35$ from account 1
+Bank: commissions of 4% were charged, the bank gained 35$ from account 3

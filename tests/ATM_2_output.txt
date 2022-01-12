@@ -1,0 +1,25 @@
+0: New account id is 1111 with password 0001 and initial balance 1000
+0: New account id is 21111 with password 0022 and initial balance 10
+0: New account id is 31111 with password 0333 and initial balance 1000
+Bank: commissions of 3% were charged, the bank gained 30$ from account 1111
+Bank: commissions of 3% were charged, the bank gained 0$ from account 21111
+Bank: commissions of 3% were charged, the bank gained 30$ from account 31111
+0: New account id is 41111 with password 4444 and initial balance 10000000
+Error 0: Your transaction failed – account id 3 does not exist
+Error 0: Your transaction failed – account id 3 does not exist
+Bank: commissions of 3% were charged, the bank gained 29$ from account 1111
+Bank: commissions of 3% were charged, the bank gained 0$ from account 21111
+Bank: commissions of 3% were charged, the bank gained 29$ from account 31111
+Bank: commissions of 3% were charged, the bank gained 300000$ from account 41111
+Error 0: Your transaction failed – account id 3 does not exist
+Error 0: Your transaction failed – account id 1 does not exist
+Error 0: Your transaction failed – account id 1 does not exist
+Bank: commissions of 2% were charged, the bank gained 18$ from account 1111
+Bank: commissions of 2% were charged, the bank gained 0$ from account 21111
+Bank: commissions of 2% were charged, the bank gained 18$ from account 31111
+Bank: commissions of 2% were charged, the bank gained 194000$ from account 41111
+Error 0: Your transaction failed – account id 1 does not exist
+Bank: commissions of 3% were charged, the bank gained 27$ from account 1111
+Bank: commissions of 3% were charged, the bank gained 0$ from account 21111
+Bank: commissions of 3% were charged, the bank gained 27$ from account 31111
+Bank: commissions of 3% were charged, the bank gained 285180$ from account 41111

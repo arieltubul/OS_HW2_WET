@@ -1,0 +1,41 @@
+0: New account id is 11 with password 0001 and initial balance 1000
+0: New account id is 22 with password 0022 and initial balance 10
+0: New account id is 33 with password 0333 and initial balance 1000
+Bank: commissions of 3% were charged, the bank gained 30$ from account 11
+Bank: commissions of 3% were charged, the bank gained 0$ from account 22
+Bank: commissions of 3% were charged, the bank gained 30$ from account 33
+0: New account id is 44 with password 4444 and initial balance 10000000
+Error 0: Your transaction failed – account with the same id exists
+Error 0: Your transaction failed – account with the same id exists
+Bank: commissions of 3% were charged, the bank gained 29$ from account 11
+Bank: commissions of 3% were charged, the bank gained 0$ from account 22
+Bank: commissions of 3% were charged, the bank gained 29$ from account 33
+Bank: commissions of 3% were charged, the bank gained 300000$ from account 44
+Error 0: Your transaction failed – account with the same id exists
+Error 0: Your transaction failed – account id 22 balance is lower than 100
+Error 0: Your transaction failed – password for account id 22 is incorrect
+Bank: commissions of 2% were charged, the bank gained 18$ from account 11
+Bank: commissions of 2% were charged, the bank gained 0$ from account 22
+Bank: commissions of 2% were charged, the bank gained 18$ from account 33
+Bank: commissions of 2% were charged, the bank gained 194000$ from account 44
+Error 0: Your transaction failed – account id 22 balance is lower than 100
+Error 0: Your transaction failed – password for account id 22 is incorrect
+Error 0: Your transaction failed – account id 2 does not exist
+Bank: commissions of 3% were charged, the bank gained 27$ from account 11
+Bank: commissions of 3% were charged, the bank gained 0$ from account 22
+Bank: commissions of 3% were charged, the bank gained 27$ from account 33
+Bank: commissions of 3% were charged, the bank gained 285180$ from account 44
+Error 0: Your transaction failed – account id 1 does not exist
+Error 0: Your transaction failed – account id 12 does not exist
+Error 0: Your transaction failed – account id 22 balance is lower than 100
+Bank: commissions of 4% were charged, the bank gained 35$ from account 11
+Bank: commissions of 4% were charged, the bank gained 0$ from account 22
+Bank: commissions of 4% were charged, the bank gained 35$ from account 33
+Bank: commissions of 4% were charged, the bank gained 368832$ from account 44
+Error 0: Your transaction failed – account id 34 does not exist
+Error 0: Your transaction failed – password for account id 22 is incorrect
+Error 0: Your transaction failed – account id 21 does not exist
+Bank: commissions of 3% were charged, the bank gained 25$ from account 11
+Bank: commissions of 3% were charged, the bank gained 0$ from account 22
+Bank: commissions of 3% were charged, the bank gained 25$ from account 33
+Bank: commissions of 3% were charged, the bank gained 265559$ from account 44
