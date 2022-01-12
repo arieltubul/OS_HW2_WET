@@ -43,7 +43,7 @@ void* atmFunc (void* atmInputFile)
 
         parseInput(&op, args, line);
         usleep(ATM_SLEEP);
-//determining what operation we have to do
+        //determining what operation we have to do
         switch (op)
         {
         case 'O':
@@ -117,7 +117,9 @@ void ATM::closeAcc(int account, int password)
             // maybe hold the write semaphore ?
             // the problem is that accLockWriters is locked when deleting the account and destroying its
             // semaphore so behavior is unexpected
-            curr.accLockReaders();
+            // SOLUTION:
+            // because we locked the bank writer so nobody can operate any operation and we can unlock the acccount mutex
+            //curr.accLockReaders();
             bankLog->lockLog();
             bankLog->logFile << atmNum << ": Account " << account << " is now closed. Balance was "
             << curr.getBalance() << endl;
@@ -257,7 +259,7 @@ void ATM::transaction(int source_acc, int password, int dest_acc, int amount)
 {
     bank->bankLockReader();
     sleep(ACTION_SLEEP);
-    // fixme according to notes in tablet
+    // FIXME according to notes in tablet
     if(!accExist(source_acc) || !accExist(dest_acc))
     {
         bankLog->lockLog();

@@ -147,7 +147,6 @@ void* chargeCommission(void* Working)
             it->second->accLockWriters();
             chargeAmount = round(commissionPercentage * 0.01 * it->second->getBalance());
             it->second->setAccBalance(-chargeAmount); //add negative amount to balance
-            // FIXME maybe write unlock and read lock?
             bankLog->lockLog();
             bankLog->logFile << "Bank: commissions of " << commissionPercentage
 			<< " % were charged, the bank gained " << chargeAmount << " $ from account " << it->second->getAccNum() << endl;
